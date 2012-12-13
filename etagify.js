@@ -66,7 +66,7 @@ module.exports = function() {
 
     res.etagify = function() {
       // if there's an ETag already on the response, do nothing
-      if (res.header('ETag')) return;
+      if (res.getHeader('ETag')) return;
 
       // otherwise, eavsedrop on the outbound response and generate a
       // content-based hash.
